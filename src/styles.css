@@ -1,0 +1,57 @@
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header and navigation */
+nav {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4500; /* Change to your preferred hover color */
+}
+
+/* Style the content */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the routes */
+.routes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.routes > div {
+    margin: 20px 0;
+}
+
+/* Add any additional styling you need for specific components */
