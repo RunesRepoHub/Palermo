@@ -9,7 +9,7 @@ class Drikkevarer extends React.Component {
 
     return (
       <div id="drikkevarer" className="menu-section">
-        <h2>Drikkevarer</h2>
+        <h1>Drikkevarer</h1>
         {drikkevarerItems.map((item, index) => (
           <MenuItem key={index} name={item.name} price={item.price} />
         ))}

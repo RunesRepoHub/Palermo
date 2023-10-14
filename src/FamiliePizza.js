@@ -9,7 +9,7 @@ class FamiliePizza extends React.Component {
 
     return (
       <div id="familiepizza" className="menu-section">
-        <h2>FamiliePizza</h2>
+        <h1>Familie Pizza</h1>
         {familiepizzaItems.map((item, index) => (
           <MenuItem key={index} name={item.name} price={item.price} />
         ))}

@@ -9,7 +9,7 @@ class Salater extends React.Component {
 
     return (
       <div id="salater" className="menu-section">
-        <h2>Salater</h2>
+        <h1>Salater</h1>
         {saladItems.map((item, index) => (
           <MenuItem key={index} name={item.name} price={item.price} />
         ))}
