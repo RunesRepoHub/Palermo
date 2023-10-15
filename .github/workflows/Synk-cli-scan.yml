@@ -19,7 +19,7 @@ jobs:
           node-version: '14' # Adjust the Node.js version as needed
 
       - name: Install Synk CLI
-        run: npm install -g @synk/snyk
+        run: npm install snyk -g
 
       - name: Test with Synk
         run: snyk test --all-projects
