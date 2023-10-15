@@ -1,0 +1,27 @@
+name: Synk CLI Test
+
+on:
+  push:
+    branches:
+      - Dev # Modify this to your branch name
+
+jobs:
+  synk-cli-test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Adjust the Node.js version as needed
+
+      - name: Install Synk CLI
+        run: npm install -g @synk/snyk
+
+      - name: Test with Synk
+        run: snyk test --all-projects
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }} # You should set this token as a secret in your repository
