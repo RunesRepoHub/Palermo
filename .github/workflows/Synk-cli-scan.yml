@@ -1,19 +1,16 @@
 name: Synk CLI Test
-
-on:
+on: 
   push:
-    branches:
-      - Dev # Modify this to your branch name
-
+     branches:
+        - Dev # Modify this to your branch name
 jobs:
-  synk-cli-test:
+  security:
     runs-on: self-hosted
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Test with Synk
-        run: snyk test --all-projects
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }} # You should set this token as a secret in your repository
+          SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }}
+        with:
+          command: monitor
