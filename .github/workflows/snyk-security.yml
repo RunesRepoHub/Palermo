@@ -4,7 +4,7 @@ jobs:
   security:
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@4
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/nodemaster
         continue-on-error: true # To make sure that SARIF upload gets called
