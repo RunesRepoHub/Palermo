@@ -3,7 +3,7 @@ import React from 'react';
 function Header() {
   return (
     <header>
-      <h1>Pizza Menu</h1>
+      <h1>Palermo Pizza Menu</h1>
     </header>
   );
 }

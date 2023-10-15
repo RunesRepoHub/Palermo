@@ -193,10 +193,14 @@ class Menu extends React.Component {
 
     return (
       <div className="menu">
+        <div className="title-1">
         <h1>Alle Pizzaer</h1>
+        </div>
         {menuItems.map((category, index) => (
           <div key={index}>
+            <div className="title-2">
             <h2>{category.category}</h2>
+            </div>
             {category.items.map((item, subIndex) => (
               <MenuItem
                 key={subIndex}

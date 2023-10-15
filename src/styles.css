@@ -5,16 +5,6 @@ body, ul {
     list-style: none;
 }
 
-h1, h2 {
-    border: 2px solid #fff;
-    padding: 10px;
-    border-radius: 4px;
-    width: 15%;
-    text-align: center; /* Center the text */
-    margin: 0 auto; /* Horizontally center the element */
-    background-color: #c5882cb2;
-  }
-
 h1 {
     color: #f5f5f5;
 }
@@ -25,9 +15,9 @@ h2 {
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #c5882c;
     background-image: url('images/background.png'); /* Set the path to your background image */
-    background-size: cover; /* Scale the image to cover the entire 
-    background */
+    background-size: cover; /* Scale the image to cover the entire background */
     background-attachment: fixed; /* Set the background image to be fixed */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -35,12 +25,69 @@ body {
     padding: 0;
 }
 
-/* Style the header and navigation */
+/* Common styles for both tablets and phones */
+.menu {
+    flex: 1; /* Takes up the left side of the screen */
+    padding: 20px; /* Add padding as needed */
+}
+
+/* Contact Info Styles */
+.contact-info {
+    position: fixed;
+    top: 50%; /* Vertically center the contact info */
+    right: 5%; /* Move it a bit to the right */
+    background-color: #fff;
+    padding: 20px; /* Make it a bit bigger */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    width: 20%; /* Adjust the width as needed */
+    text-align: center;
+    transform: translateY(-50%); /* Center vertically */
+    background-color: #c5882cb2;
+    color: #f5f5f5;
+}
+
+/* Adjust the margin and padding for H1 and H2 */
+h1, h2 {
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #c5882cb2;
+    color: #f5f5f5;
+    margin: 10px; /* Add margin */
+}
+
+.title-1 {
+    position: relative;
+    left: 28%;
+    width: 450px;
+}
+
+.title-2 {
+    position: relative;
+    left: 28%;
+    width: 450px;
+}
+
+.title-contact {
+    position: relative;
+    left: 20%;
+    max-width: fit-content;
+}
+
+/* Navbar Styles (Common Styles) */
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make the navbar full width */
     background-color: #c5882cb2;
     color: white;
     text-align: center;
     padding: 10px 0;
+    z-index: 1; /* Ensure the navbar is above other content */
 }
 
 nav ul {
@@ -63,31 +110,19 @@ nav a:hover {
     color: #ff4500; /* Change to your preferred hover color */
 }
 
-/* Style the content */
-.content {
-    padding: 20px;
-    text-align: center;
-}
-
-/* Style the routes */
-.routes {
+/* Container for content */
+.container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 50px; /* Adjust to account for the navbar height */
 }
 
-.routes > div {
-    margin: 20px 0;
-}
-
-/* Add any additional styling you need for specific components */
-
-/* Menu.css */
+/* Menu Item Styles (Common Styles) */
 .menu-item {
     position: relative;
     display: inline-block;
-    width: 450px; /* Set a fixed width */
-    max-height: 200px; /* Set a maximum height */
+    width: 450px; /* Fixed width for menu items */
+    max-height: 200px;
+    text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -98,11 +133,42 @@ nav a:hover {
     background-color: #cccacacb;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-  }
-  
-  .menu-item:hover {
+}
+
+.menu-item:hover {
     transform: scale(1.05);
     background-color: #f0c69ed8;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-  
+}
+
+/* Media Query for Tablets and Phones */
+@media (max-width: 768px) {
+    .title-1, .title-2, .title-contact {
+        left: 0;
+        width: 110%;
+        text-align: center;
+    }
+    .title-contact {
+        left: 31%;
+    }
+    .contact-info {
+        position: relative;
+        top: 60px; /* Set it to the top of the screen */
+        bottom: auto;
+        width: 100%; /* Adjust the width to fit the screen */
+        transform: translateY(0); /* Reset the transform */
+        border-radius: 0; /* Remove border radius */
+        padding: 18px; /* Add padding as needed */
+        border: 0px solid #000000;
+    }
+    .menu-item {
+        left: 0;
+        width: 95%;
+        max-height: none;
+        white-space: normal;
+    }
+    .nav {
+        max-width: fit-content;
+    }
+}
+

@@ -6,10 +6,9 @@ class MenuItem extends React.Component {
     const { name, price, description, nr } = this.props;
     return (
       <div className="menu-item">
-        <h3>{name}</h3>
+        <h3>Nr {nr}. {name}</h3>
         <p>{description}</p>
-        <p>Price: {price}kr</p>
-        <p>nr: {nr}</p>
+        <h4>Pris: {price}kr</h4>
       </div>
     );
   }
