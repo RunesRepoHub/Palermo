@@ -5,7 +5,6 @@ on:
     branches:
       - Dev # Modify this to your branch name
 
-
 jobs:
   synk-cli-test:
     runs-on: self-hosted
@@ -13,14 +12,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18' # Adjust the Node.js version as needed
-
-      - name: Install Synk CLI
-        run: npm install snyk -g
 
       - name: Test with Synk
         run: snyk test --all-projects
