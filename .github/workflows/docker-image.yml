@@ -18,7 +18,7 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . -t palermo:dev -f Dockerfile
-        docker tag palermo:dev 192.168.1.140:5000/rph-website:dev
+        docker tag palermo:dev 192.168.1.140:5000/palermo:dev
         docker push 192.168.1.140:5000/palermo:dev
 
     - name: Send Notification ntfy
