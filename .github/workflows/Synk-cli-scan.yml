@@ -5,6 +5,7 @@ on:
     branches:
       - Dev # Modify this to your branch name
 
+
 jobs:
   synk-cli-test:
     runs-on: self-hosted
